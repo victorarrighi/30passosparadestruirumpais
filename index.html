@@ -109,7 +109,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script>
     // Substitua pela URL completa do checkout do produto na Kiwify.
-    const CHECKOUT_URL = "";
+    const CHECKOUT_URL = "https://pay.kiwify.com.br/ajNv4Hl";
     const toast = document.getElementById("toast");
     let toastTimer;
     document.querySelectorAll(".checkout-link").forEach(link => {
@@ -119,7 +119,7 @@
       } else {
         link.addEventListener("click", event => {
           event.preventDefault();
-          toast.textContent = "Configure o link da Kiwify em CHECKOUT_URL";
+          toast.textContent = "";
           toast.classList.add("show");
           clearTimeout(toastTimer);
           toastTimer = setTimeout(() => toast.classList.remove("show"), 5000);
