@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="30 passos para destruir um país: um ebook com trinta controvérsias dos governos do PT, fatos, contexto e referências para consulta.">
+  <title>30 passos para destruir um país — Ebook</title>
+  <style>
+    :root { --paper:#f7f6f2; --white:#fff; --ink:#171716; --muted:#5d5b56; --line:#dcd9d2; --accent:#8a3128; --max:1160px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Georgia,"Times New Roman",serif; -webkit-font-smoothing:antialiased; }
+    button,a { -webkit-tap-highlight-color:transparent; }
+    a { color:inherit; }
+    .container { width:min(calc(100% - 44px),var(--max)); margin:auto; }
+    .topbar { border-bottom:1px solid var(--line); background:rgba(247,246,242,.94); position:sticky; top:0; z-index:20; backdrop-filter:blur(10px); }
+    .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { font-size:12px; font-family:Arial,sans-serif; font-weight:700; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; max-width:220px; line-height:1.4; }
+    .navlinks { display:flex; gap:26px; align-items:center; font:12px Arial,sans-serif; }
+    .navlinks a { text-decoration:none; }
+    .navlinks a:hover,.footer a:hover { text-decoration:underline; }
+    .navlinks .mini { background:var(--ink); color:white; padding:13px 18px; text-decoration:none; }
+    .hero { padding:80px 0 96px; border-bottom:1px solid var(--line); }
+    .hero-grid { display:grid; grid-template-columns:1fr minmax(310px,430px); align-items:center; gap:clamp(42px,8vw,125px); }
+    .eyebrow,.label { font:700 11px/1.5 Arial,sans-serif; letter-spacing:.17em; text-transform:uppercase; }
+    .eyebrow { color:var(--accent); }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font-size:clamp(53px,6.8vw,94px); line-height:.99; letter-spacing:-.055em; margin:23px 0 27px; font-weight:700; }
+    .deck { font-size:clamp(19px,2vw,25px); font-style:italic; line-height:1.38; max-width:590px; margin-bottom:26px; }
+    .hero-copy { font-size:17px; line-height:1.75; color:var(--muted); max-width:565px; }
+    .hero-actions { display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin-top:34px; }
+    .button { display:inline-flex; justify-content:center; align-items:center; gap:16px; min-height:58px; padding:16px 24px; background:var(--ink); color:#fff; border:1px solid var(--ink); text-decoration:none; font:700 12px Arial,sans-serif; text-transform:uppercase; letter-spacing:.08em; cursor:pointer; transition:background .2s,transform .2s; }
+    .button:hover { background:var(--accent); border-color:var(--accent); transform:translateY(-2px); }
+    .textlink { font:700 12px Arial,sans-serif; text-transform:uppercase; letter-spacing:.07em; text-underline-offset:5px; }
+    .book-wrap { position:relative; padding:20px 25px 28px 0; }
+    .book-wrap:before { content:""; position:absolute; inset:50px 0 0 35px; background:#e9e6de; }
+    .book { position:relative; aspect-ratio:596 / 842; padding:14% 12% 11%; background:white; border:1px solid #e8e6e1; box-shadow:21px 23px 38px rgba(0,0,0,.12),3px 3px 5px rgba(0,0,0,.07); display:flex; flex-direction:column; }
+    .book-label { font-size:clamp(10px,1.15vw,13px); line-height:1.5; }
+    .book-title { margin:11% 0 8%; font-weight:700; font-size:clamp(34px,4vw,51px); line-height:1.17; letter-spacing:-.045em; }
+    .book-sub { font-size:clamp(14px,1.55vw,19px); font-style:italic; line-height:1.42; }
+    .book-note { margin-top:7%; font-size:clamp(11px,1.17vw,14px); line-height:1.48; }
+    .book-year { margin-top:auto; font-size:13px; }
+    .strip { display:grid; grid-template-columns:repeat(3,1fr); padding:26px 0; }
+    .strip div { padding:5px 28px; border-right:1px solid var(--line); font:13px/1.5 Arial,sans-serif; }
+    .strip div:first-child { padding-left:0; }.strip div:last-child { border:0; }
+    .strip strong { display:block; font:700 26px Georgia,serif; margin-bottom:3px; }
+    section.content { padding:105px 0; border-top:1px solid var(--line); }
+    .section-head { max-width:720px; margin-bottom:48px; }
+    h2 { font-size:clamp(37px,4.4vw,60px); letter-spacing:-.044em; line-height:1.12; margin:18px 0 23px; }
+    .section-head p,.lead { font-size:18px; line-height:1.72; color:var(--muted); }
+    .topic-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .topic { background:#fff; border:1px solid var(--line); padding:28px; min-height:210px; }
+    .topic b { display:block; color:var(--accent); font:700 12px Arial,sans-serif; letter-spacing:.12em; margin-bottom:30px; }
+    .topic h3 { font-size:24px; line-height:1.16; letter-spacing:-.02em; margin-bottom:11px; }
+    .topic p { font:14px/1.55 Arial,sans-serif; color:var(--muted); margin:0; }
+    .manifest { display:grid; grid-template-columns:1fr 1fr; gap:10%; align-items:start; }
+    .manifest p { font-size:18px; line-height:1.78; color:var(--muted); }
+    .manifest .quote { font-size:clamp(31px,3.7vw,49px); line-height:1.16; letter-spacing:-.035em; margin:8px 0 0; }
+    .catalog { columns:2; column-gap:72px; padding:0; list-style:none; counter-reset:chapter; }
+    .catalog li { counter-increment:chapter; break-inside:avoid; border-bottom:1px solid var(--line); padding:14px 0; display:flex; align-items:baseline; gap:19px; font-size:17px; line-height:1.35; }
+    .catalog li:before { content:counter(chapter,decimal-leading-zero); color:var(--accent); font:700 12px Arial,sans-serif; }
+    .purchase { background:#eae7df; padding:95px 0; }
+    .purchase-grid { display:grid; grid-template-columns:1.3fr .7fr; gap:9%; align-items:center; }
+    .purchase h2 { margin-bottom:16px; }
+    .purchase p { font-size:18px; line-height:1.6; color:#45443f; max-width:640px; }
+    .card { background:#fff; padding:32px; border:1px solid var(--line); }
+    .card .price { font-size:48px; letter-spacing:-.06em; margin:20px 0; line-height:1; }
+    .card .price small { font:14px Arial,sans-serif; letter-spacing:0; }
+    .card .button { width:100%; }.card p { font:13px/1.6 Arial,sans-serif; margin:15px 0 0; color:var(--muted); }
+    .faq { max-width:800px; }.faq details { border-bottom:1px solid var(--line); padding:20px 0; }
+    .faq summary { cursor:pointer; list-style:none; display:flex; justify-content:space-between; gap:20px; font-size:20px; }
+    .faq summary::-webkit-details-marker { display:none; }.faq summary:after { content:"+"; font:24px Arial,sans-serif; }
+    .faq details[open] summary:after { content:"−"; }
+    .faq details p { color:var(--muted); line-height:1.65; max-width:680px; margin:15px 0 0; }
+    .footer { border-top:1px solid var(--line); padding:32px 0; font:12px/1.6 Arial,sans-serif; color:var(--muted); }
+    .footer-inner { display:flex; justify-content:space-between; gap:20px; }.footer p { margin:0; }
+    .toast { position:fixed; left:50%; bottom:26px; transform:translate(-50%,20px); background:#171716; color:#fff; padding:14px 20px; font:13px/1.5 Arial,sans-serif; max-width:min(90vw,460px); opacity:0; pointer-events:none; transition:.2s; z-index:40; text-align:center; }.toast.show { opacity:1; transform:translate(-50%,0); }
+    :focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+    @media(max-width:850px) { .hero-grid { grid-template-columns:1fr; }.book-wrap { width:min(420px,92%); margin:auto; }.hero { padding:60px 0; }.topic-grid { grid-template-columns:repeat(2,1fr); }.purchase-grid,.manifest { grid-template-columns:1fr; gap:25px; }.navlinks a:not(.mini) { display:none; } }
+    @media(max-width:580px) { .container { width:min(calc(100% - 36px),var(--max)); }.nav { min-height:65px; }.brand { font-size:10px; }.navlinks .mini { padding:11px 13px; }.hero { padding:47px 0 60px; } h1 { font-size:clamp(50px,12vw,70px); }.book-wrap { padding-right:17px; }.book-title { font-size:clamp(32px,9vw,45px); }.book-sub { font-size:clamp(14px,4vw,18px); }.book-note { font-size:clamp(11px,3vw,13px); }.strip { gap:0; }.strip div { padding:8px; font-size:11px; }.strip strong { font-size:20px; } section.content,.purchase { padding:68px 0; }.topic-grid { grid-template-columns:1fr; }.topic { min-height:0; }.catalog { columns:1; }.footer-inner { flex-direction:column; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*:before,*:after { transition:none!important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="container nav"><a class="brand" href="#inicio">30 passos para destruir um país</a><nav class="navlinks" aria-label="Navegação principal"><a href="#sobre">Sobre o livro</a><a href="#sumario">Sumário</a><a class="mini" href="#comprar">Conhecer o ebook →</a></nav></div></header>
+  <main>
+    <section class="hero" id="inicio"><div class="container hero-grid">
+      <div><div class="eyebrow">Política · Economia · Instituições</div><h1>30 passos<br>para destruir<br>um país</h1><p class="deck">Trinta controvérsias dos governos do PT: fatos, contexto e consequências.</p><p class="hero-copy">Uma análise documentada de decisões políticas, crises econômicas e falhas de gestão. Leia os episódios, entenda o contexto de cada um e consulte as referências.</p><div class="hero-actions"><a href="#comprar" class="button">Conhecer o ebook <span aria-hidden="true">↗</span></a><a class="textlink" href="#sumario">Explorar o sumário ↓</a></div></div>
+      <div class="book-wrap" aria-label="Representação visual da capa do ebook"><div class="book"><div class="book-label">POLÍTICA • ECONOMIA • INSTITUIÇÕES</div><div class="book-title">30 passos<br>para destruir<br>um país</div><div class="book-sub">Trinta controvérsias dos governos do PT:<br>fatos, contexto e consequências</div><div class="book-note">Uma análise documentada de decisões políticas,<br>crises econômicas e falhas de gestão.</div><div class="book-year">2026</div></div></div>
+    </div></section>
+    <div class="container strip" aria-label="Informações do livro"><div><strong>30</strong>temas examinados</div><div><strong>79</strong>páginas no PDF</div><div><strong>81</strong>referências para consulta</div></div>
+    <section class="content" id="sobre"><div class="container"><div class="section-head"><span class="label">O que você encontra</span><h2>Uma crítica política com espaço para contexto.</h2><p>O ebook percorre episódios dos governos Lula e Dilma e controvérsias do terceiro mandato de Lula. Cada capítulo apresenta o acontecimento, explica o debate e discute seus possíveis efeitos.</p></div><div class="topic-grid">
+      <article class="topic"><b>01 / INSTITUIÇÕES</b><h3>Corrupção e governança</h3><p>Mensalão, Petrobras, Pasadena e decisões de gestão de recursos públicos.</p></article>
+      <article class="topic"><b>02 / ECONOMIA</b><h3>Crises e escolhas fiscais</h3><p>Recessão, inflação, desemprego, contas públicas e políticas tributárias.</p></article>
+      <article class="topic"><b>03 / PODER</b><h3>Instituições e alianças</h3><p>Relações com o Congresso, indicações ao Supremo e disputas sobre políticas públicas.</p></article>
+      <article class="topic"><b>04 / MUNDO</b><h3>Política externa</h3><p>Venezuela, guerra na Ucrânia e declarações sobre Gaza.</p></article>
+      <article class="topic"><b>05 / SOCIEDADE</b><h3>Impactos concretos</h3><p>INSS, Belo Monte, Copa de 2014 e populações atingidas por grandes decisões.</p></article>
+      <article class="topic"><b>06 / PESQUISA</b><h3>Fontes para conferir</h3><p>Glossário, critérios editoriais e referências reunidos ao fim do volume.</p></article>
+    </div></div></section>
+    <section class="content"><div class="container manifest"><div><span class="label">Nota editorial</span><h2>O título provoca.<br>O texto examina.</h2></div><div><p class="quote">“Distinguir o que foi comprovado, o que permanece em apuração e o que depende de uma avaliação política.”</p><p>O livro esclarece que seu título tem caráter editorial. Ele não afirma que exista um plano comprovado para destruir o país. Também registra absolvições, anulações e mudanças relevantes quando elas alteram a interpretação de um caso.</p></div></div></section>
+    <section class="content" id="sumario"><div class="container"><div class="section-head"><span class="label">Os capítulos</span><h2>Trinta temas para ler e conferir.</h2><p>Do Mensalão às controvérsias recentes, o percurso segue acontecimentos de diferentes períodos e áreas de governo.</p></div><ol class="catalog">
+      <li>Mensalão e apoio parlamentar</li><li>A defesa partidária dos condenados</li><li>Corrupção e governança na Petrobras</li><li>A aquisição da refinaria de Pasadena</li><li>Custos e atrasos em Abreu e Lima</li><li>O Tesouro e a expansão dos bancos públicos</li><li>Obras no exterior e garantias públicas</li><li>A recessão de 2015 e 2016</li><li>Desemprego e perda de segurança econômica</li><li>A inflação de dois dígitos</li><li>A política elétrica e a alta das tarifas</li><li>Pedaladas fiscais e impeachment</li><li>O ajuste fiscal do segundo mandato de Dilma</li><li>O endurecimento do seguro-desemprego</li><li>O déficit federal de 2023</li><li>A tributação das pequenas compras internacionais</li><li>A volta dos tributos federais sobre combustíveis</li><li>Os conflitos com a autonomia do Banco Central</li><li>A ampliação da estrutura ministerial</li><li>As alianças com o chamado Centrão</li><li>A indicação de Cristiano Zanin ao Supremo</li><li>A retirada de empresas do programa de privatização</li><li>As restrições à aquisição e ao uso de armas</li><li>As propostas de regulação dos meios de comunicação</li><li>A relação com Nicolás Maduro e a Venezuela</li><li>As declarações sobre a guerra na Ucrânia</li><li>A comparação entre Gaza e o Holocausto</li><li>As fraudes nos descontos de benefícios do INSS</li><li>Belo Monte e os direitos das populações atingidas</li><li>A Copa de 2014 e a distância entre promessa e legado</li>
+    </ol></div></section>
+    <section class="purchase" id="comprar"><div class="container purchase-grid"><div><span class="label">Ebook digital · Edição setembro de 2026</span><h2>Leia a análise completa.</h2><p>Trinta capítulos, considerações finais, glossário e lista de referências em um PDF de 79 páginas. O pagamento e a entrega digital são feitos pela plataforma de checkout vinculada ao botão.</p></div><div class="card"><span class="label">Acesso ao PDF</span><div class="price">R$ 19,99 <small>pagamento único</small></div><a class="button checkout-link" href="#comprar" aria-label="Ir para o checkout do ebook">Comprar o ebook <span aria-hidden="true">↗</span></a><p>Você será direcionado ao checkout. A liberação do arquivo ocorre após a confirmação da compra pela plataforma.</p></div></div></section>
+    <section class="content"><div class="container faq"><div class="section-head"><span class="label">Perguntas frequentes</span><h2>Antes de começar a leitura.</h2></div><details><summary>Em qual formato recebo o ebook?</summary><p>Em PDF, para leitura no celular, computador ou tablet.</p></details><details><summary>O livro contém referências?</summary><p>Sim. O volume inclui uma lista de 81 referências para consultar a documentação citada nos capítulos.</p></details><details><summary>O ebook apresenta apenas fatos comprovados?</summary><p>O recorte é crítico e inclui acontecimentos, controvérsias e avaliações políticas. A nota editorial diferencia fatos comprovados, investigações e interpretações, além de registrar desdobramentos judiciais relevantes.</p></details><details><summary>Como recebo o arquivo após comprar?</summary><p>O acesso é disponibilizado pelo checkout configurado pelo vendedor após a confirmação do pagamento. Consulte as instruções exibidas na página de compra.</p></details></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><p>© <span id="year">2026</span> · 30 passos para destruir um país · Edição de setembro de 2026</p><p>Obra de análise e opinião política com referências para consulta.</p></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    // Substitua pela URL completa do checkout do produto na Kiwify.
+    const CHECKOUT_URL = "";
+    const toast = document.getElementById("toast");
+    let toastTimer;
+    document.querySelectorAll(".checkout-link").forEach(link => {
+      if (CHECKOUT_URL.trim()) {
+        link.href = CHECKOUT_URL.trim();
+        link.rel = "noopener noreferrer";
+      } else {
+        link.addEventListener("click", event => {
+          event.preventDefault();
+          toast.textContent = "Configure o link da Kiwify em CHECKOUT_URL";
+          toast.classList.add("show");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => toast.classList.remove("show"), 5000);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
